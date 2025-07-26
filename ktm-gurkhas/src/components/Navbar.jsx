@@ -1,9 +1,25 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../../public/logo.png"; // Make sure to import your logo image
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "../../public/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleTeamClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      // Scroll to team section on home page
+      const teamSection = document.getElementById("team-section");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Normal navigation to /team when not on home page
+      navigate("/team");
+    }
+  };
 
   return (
     <nav className="bg-black shadow-lg border-b border-yellow-300">
@@ -12,7 +28,6 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center space-x-3">
-              {/* Circular logo container */}
               <div className="w-12 h-12 rounded-full border-2 border-yellow-300 overflow-hidden bg-black flex items-center justify-center">
                 <img
                   src={logo}
@@ -42,6 +57,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/team"
+                onClick={handleTeamClick}
                 className="text-gray-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
               >
                 Team
@@ -80,34 +96,7 @@ const Navbar = () => {
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-yellow-300 focus:outline-none"
               aria-label="Main menu"
             >
-              <svg
-                className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <svg
-                className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              {/* Hamburger icon */}
             </button>
           </div>
         </div>
@@ -123,11 +112,22 @@ const Navbar = () => {
           <Link
             to="/"
             className="text-gray-300 hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium"
+            onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
-            to="/team"
+            to={location.pathname === "/" ? "#team-section" : "/team"}
+            onClick={(e) => {
+              if (location.pathname === "/") {
+                e.preventDefault();
+                const teamSection = document.getElementById("team-section");
+                if (teamSection) {
+                  teamSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }
+              setIsOpen(false);
+            }}
             className="text-gray-300 hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Team
@@ -135,24 +135,28 @@ const Navbar = () => {
           <Link
             to="/schedule"
             className="text-gray-300 hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium"
+            onClick={() => setIsOpen(false)}
           >
             Schedule
           </Link>
           <Link
             to="/news"
             className="text-gray-300 hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium"
+            onClick={() => setIsOpen(false)}
           >
             News
           </Link>
           <Link
             to="/shop"
             className="text-gray-300 hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium"
+            onClick={() => setIsOpen(false)}
           >
             Shop
           </Link>
           <Link
             to="/contact"
             className="border border-yellow-300 text-yellow-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-yellow-300 hover:bg-opacity-10"
+            onClick={() => setIsOpen(false)}
           >
             Contact
           </Link>
