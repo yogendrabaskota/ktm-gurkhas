@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../public/logo.png";
+import logo from "/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +18,17 @@ const Navbar = () => {
     } else {
       // Normal navigation to /team when not on home page
       navigate("/team");
+    }
+  };
+  const handleContactClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const contactSelection = document.getElementById("contact");
+      if (contactSelection) {
+        contactSelection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/contact");
     }
   };
 
@@ -82,6 +93,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/contact"
+                onClick={handleContactClick}
                 className="border border-yellow-300 text-yellow-300 px-4 py-2 rounded-md text-sm font-medium hover:bg-yellow-300 hover:bg-opacity-9 hover:text-white transition duration-300"
               >
                 Contact

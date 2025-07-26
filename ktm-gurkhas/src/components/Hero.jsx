@@ -60,7 +60,7 @@ const Hero = () => {
               </Link>
               <Link
                 to="/shop"
-                className="inline-flex items-center justify-center px-8 py-3 border border-yellow-300 text-base font-medium rounded-md text-yellow-100 hover:bg-yellow-100 hover:bg-opacity-10 hover:border-yellow-200 transition duration-300"
+                className="inline-flex items-center justify-center px-8 py-3 border border-yellow-300 text-base font-medium rounded-md text-yellow-100 hover:bg-yellow-300 hover:bg-opacity-10 hover:border-yellow-200 hover:text-white transition duration-300"
               >
                 Shop Merchandise
                 <svg
@@ -81,7 +81,7 @@ const Hero = () => {
               {/* Team image placeholder - replace with your actual image */}
               <div className="relative rounded-lg overflow-hidden border-2 border-yellow-300 shadow-xl">
                 <img
-                  src="../../public/team.png"
+                  src="/team.png"
                   alt="Kathmandu Gurkhas Team"
                   className="w-full h-auto object-cover"
                 />

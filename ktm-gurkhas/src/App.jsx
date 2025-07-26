@@ -3,7 +3,9 @@ import { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Team from "./pages/Team";
+import Team from "./components/Team";
+import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -24,7 +26,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
