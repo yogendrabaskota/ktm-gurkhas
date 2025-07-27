@@ -6,14 +6,24 @@ import Navbar from "./components/Navbar";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import Schedule from "./pages/Schedule";
 
-// Scroll to top on route change
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Small delay to ensure DOM is ready
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 }
@@ -27,6 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/schedule" element={<Schedule />} />
       </Routes>
       <Footer />
     </BrowserRouter>

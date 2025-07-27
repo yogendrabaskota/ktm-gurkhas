@@ -1,21 +1,25 @@
-import React, { useRef } from "react";
+import React from "react";
 import Hero from "../components/Hero";
 import Team from "../components/Team";
 import Contact from "./Contact";
+import Schedule from "./Schedule";
 
 const Home = () => {
-  const teamRef = useRef(null);
-  const contactRef = useRef(null);
-
   return (
     <>
       <Hero />
-      <div ref={teamRef}>
+
+      <section id="schedule-section">
+        <Schedule />
+      </section>
+
+      <section id="team-section">
         <Team />
-      </div>
-      <div ref={contactRef}>
+      </section>
+
+      <section id="contact-section">
         <Contact />
-      </div>
+      </section>
     </>
   );
 };

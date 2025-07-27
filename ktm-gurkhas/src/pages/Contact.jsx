@@ -254,6 +254,9 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        {/* <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          Back to Top
+        </button> */}
 
         {/* Decorative elements matching other pages */}
         <div className="absolute bottom-8 right-8 w-16 h-16 rounded-full border-2 border-yellow-200 animate-pulse opacity-70">
@@ -262,7 +265,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-300 to-transparent">
+          {" "}
+        </div>
       </div>
     </section>
   );

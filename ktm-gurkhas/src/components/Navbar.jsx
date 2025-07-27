@@ -7,31 +7,24 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleTeamClick = (e) => {
-    if (location.pathname === "/") {
-      e.preventDefault();
-      // Scroll to team section on home page
-      const teamSection = document.getElementById("team-section");
-      if (teamSection) {
-        teamSection.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick =
+    (path, sectionId = null) =>
+    (e) => {
+      if (location.pathname === "/" && sectionId) {
+        e.preventDefault();
+        // If on homepage, scroll to section
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", `/#${sectionId}`);
+        }
+      } else {
+        e.preventDefault();
+        // If not on homepage, navigate to path with hash
+        navigate(`${path}${sectionId ? `#${sectionId}` : ""}`);
       }
-    } else {
-      // Normal navigation to /team when not on home page
-      navigate("/team");
-    }
-  };
-  const handleContactClick = (e) => {
-    if (location.pathname === "/") {
-      e.preventDefault();
-      const contactSelection = document.getElementById("contact");
-      if (contactSelection) {
-        contactSelection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/contact");
-    }
-  };
-
+      setIsOpen(false);
+    };
   return (
     <nav className="bg-black shadow-lg border-b border-yellow-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,18 +59,20 @@ const Navbar = () => {
               >
                 Home
               </Link>
+
               <Link
-                to="/team"
-                onClick={handleTeamClick}
-                className="text-gray-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
-              >
-                Team
-              </Link>
-              <Link
-                to="/schedule"
+                to="/#schedule"
+                onClick={() => handleNavClick("schedule", "schedule")}
                 className="text-gray-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
               >
                 Schedule
+              </Link>
+              <Link
+                to="/#team-section"
+                onClick={() => handleNavClick("team", "team-section")}
+                className="text-gray-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >
+                Team
               </Link>
               <Link
                 to="/news"
@@ -92,8 +87,8 @@ const Navbar = () => {
                 Shop
               </Link>
               <Link
-                to="/contact"
-                onClick={handleContactClick}
+                to="/#contact"
+                onClick={() => handleNavClick("contact", "contact")}
                 className="border border-yellow-300 text-yellow-300 px-4 py-2 rounded-md text-sm font-medium hover:bg-yellow-300 hover:bg-opacity-9 hover:text-white transition duration-300"
               >
                 Contact
