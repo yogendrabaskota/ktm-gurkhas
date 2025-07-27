@@ -23,17 +23,17 @@ const Hero = () => {
             <div className="mt-12 max-w-md mx-auto md:mx-0 bg-black bg-opacity-50 border border-yellow-100 border-opacity-30 rounded-lg p-4">
               <div className="flex justify-between text-yellow-100">
                 <div className="text-center px-4">
-                  <div className="text-3xl font-bold text-gold-500">24</div>
+                  <div className="text-3xl font-bold text-gold-500">14</div>
                   <div className="text-sm uppercase tracking-wider">
                     Matches
                   </div>
                 </div>
                 <div className="text-center px-4 border-x border-yellow-100 border-opacity-20">
-                  <div className="text-3xl font-bold text-gold-500">18</div>
+                  <div className="text-3xl font-bold text-gold-500">9</div>
                   <div className="text-sm uppercase tracking-wider">Wins</div>
                 </div>
                 <div className="text-center px-4">
-                  <div className="text-3xl font-bold text-gold-500">6</div>
+                  <div className="text-3xl font-bold text-gold-500">1</div>
                   <div className="text-sm uppercase tracking-wider">Titles</div>
                 </div>
               </div>

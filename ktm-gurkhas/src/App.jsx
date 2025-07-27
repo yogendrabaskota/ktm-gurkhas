@@ -7,6 +7,9 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Schedule from "./pages/Schedule";
+import MatchDetails from "./pages/MatchDetails";
+import Login from "./components/Login";
+import Gallery from "./pages/Gallery";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -38,6 +41,9 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/match-details/:id" element={<MatchDetails />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
       <Footer />
     </BrowserRouter>

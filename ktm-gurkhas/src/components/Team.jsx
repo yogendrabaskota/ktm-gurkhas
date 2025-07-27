@@ -134,7 +134,7 @@ const Team = () => {
                     <img
                       src={player.image}
                       alt={player.name}
-                      className="w-full h-full object-cover group-hover:opacity-75 transition duration-300"
+                      className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
                   </div>
@@ -213,6 +213,66 @@ const Team = () => {
                 />
               </svg>
             </Link>
+          </div>
+
+          {/* Photo Gallery Section */}
+          <div className="mt-24 bg-black bg-opacity-50 border border-yellow-300 border-opacity-30 rounded-lg p-8 text-center max-w-4xl mx-auto relative overflow-hidden">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwMDAiLz48cGF0aCBkPSJNMzAgMTVMMTUgMzBMMzAgNDVMNDUgMzBMMzAgMTVNMzAgNDVMMTUgMzBMMzAgMTVNNDUgMzBMMzAgNDVMMzAgMTUiIHN0cm9rZT0iI0ZGRUI4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+')]"></div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-yellow-300 mb-4">
+                TEAM GALLERY
+              </h3>
+              <p className="text-yellow-100 mb-6">
+                Relive the thrilling moments from our matches and
+                behind-the-scenes action
+              </p>
+
+              {/* Gallery Preview - 3 sample images */}
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="aspect-w-16 aspect-h-9 rounded overflow-hidden border border-yellow-300 border-opacity-30">
+                  <img
+                    src="/players/karan.png"
+                    alt="Gallery Preview 1"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-w-16 aspect-h-9 rounded overflow-hidden border border-yellow-300 border-opacity-30">
+                  <img
+                    src="/players/karan.png"
+                    alt="Gallery Preview 2"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-w-16 aspect-h-9 rounded overflow-hidden border border-yellow-300 border-opacity-30">
+                  <img
+                    src="/players/karan.png"
+                    alt="Gallery Preview 3"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <Link
+                to="/gallery"
+                className="inline-flex items-center justify-center px-8 py-3 border border-yellow-300 text-base font-medium rounded-md text-yellow-100 hover:bg-yellow-300 hover:bg-opacity-10 hover:border-yellow-200 hover:text-white transition duration-300"
+              >
+                View Full Gallery
+                <svg
+                  className="ml-2 -mr-1 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
 
