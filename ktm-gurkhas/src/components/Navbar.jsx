@@ -85,6 +85,18 @@ const Navbar = () => {
               >
                 Shop
               </Link>
+              <Link
+                to="/about"
+                className="text-gray-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >
+                About
+              </Link>
+              <Link
+                to="/partners"
+                className="text-gray-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >
+                Sponsers
+              </Link>
             </div>
 
             {/* Login Button - Desktop */}
