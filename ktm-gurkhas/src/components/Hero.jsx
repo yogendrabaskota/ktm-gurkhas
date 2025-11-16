@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="md:w-1/2 md:pr-8 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
               <span className="block">KATHMANDU</span>
-              <span className="block text-gold-500 mt-2">GURKHAS</span>
+              <span className="block text-gold-500 mt-2">Gorkhas</span>
             </h1>
             <p className="mt-6 max-w-lg mx-auto md:mx-0 text-xl text-yellow-100">
               Courage. Honor. Victory. The pride of Nepal in the world of
@@ -23,17 +23,17 @@ const Hero = () => {
             <div className="mt-12 max-w-md mx-auto md:mx-0 bg-black bg-opacity-50 border border-yellow-100 border-opacity-30 rounded-lg p-4">
               <div className="flex justify-between text-yellow-100">
                 <div className="text-center px-4">
-                  <div className="text-3xl font-bold text-gold-500">14</div>
+                  <div className="text-3xl font-bold text-gold-500">7</div>
                   <div className="text-sm uppercase tracking-wider">
                     Matches
                   </div>
                 </div>
                 <div className="text-center px-4 border-x border-yellow-100 border-opacity-20">
-                  <div className="text-3xl font-bold text-gold-500">9</div>
+                  <div className="text-3xl font-bold text-gold-500">4</div>
                   <div className="text-sm uppercase tracking-wider">Wins</div>
                 </div>
                 <div className="text-center px-4">
-                  <div className="text-3xl font-bold text-gold-500">1</div>
+                  <div className="text-3xl font-bold text-gold-500">0</div>
                   <div className="text-sm uppercase tracking-wider">Titles</div>
                 </div>
               </div>
@@ -82,7 +82,7 @@ const Hero = () => {
               <div className="relative rounded-lg overflow-hidden border-2 border-yellow-300 shadow-xl">
                 <img
                   src="/team.png"
-                  alt="Kathmandu Gurkhas Team"
+                  alt="Kathmandu Gorkhass Team"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>

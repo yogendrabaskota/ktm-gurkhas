@@ -11,56 +11,91 @@ const Schedule = () => {
   const allMatches = [
     {
       id: 1,
-      date: "2023-10-15",
+      date: "2024-12-02",
       time: "14:00",
-      opponent: "Pokhara Rhinos",
+      opponent: "Chitwan Rhinos",
       venue: "Tribhuvan University Ground",
       competition: "NPL T20",
       isHome: true,
-      ticketLink: "#",
-      result: "Won by 28 runs",
-    },
-    {
-      id: 2,
-      date: "2023-10-22",
-      time: "11:00",
-      opponent: "Chitwan Tigers",
-      venue: "Pokhara Stadium",
-      competition: "NPL T20",
-      isHome: false,
       ticketLink: "#",
       result: "Lost by 5 wickets",
     },
     {
-      id: 3,
-      date: "2023-10-29",
-      time: "13:30",
-      opponent: "Biratnagar Warriors",
+      id: 2,
+      date: "2027-12-04",
+      time: "11:00",
+      opponent: "Karnali Yaks",
       venue: "Tribhuvan University Ground",
       competition: "NPL T20",
       isHome: true,
       ticketLink: "#",
-      result: "Won by 42 runs",
+      result: "Won by 3 wickets",
+    },
+    {
+      id: 2,
+      date: "2024-12-04",
+      time: "11:00",
+      opponent: "Karnali Yaks",
+      venue: "Tribhuvan University Ground",
+      competition: "NPL T20",
+      isHome: true,
+      ticketLink: "#",
+      result: "Won by 3 wickets",
+    },
+    {
+      id: 3,
+      date: "2024-12-05",
+      time: "13:30",
+      opponent: "Sudur Paschim Royals",
+      venue: "Tribhuvan University Ground",
+      competition: "NPL T20",
+      isHome: true,
+      ticketLink: "#",
+      result: "Lost by 73 runs",
     },
     {
       id: 4,
-      date: "2025-11-05", // Future date for demonstration
+      date: "2024-12-11", // Future date for demonstration
       time: "10:30",
-      opponent: "Janakpur Jets",
-      venue: "Dharan Stadium",
-      competition: "NPL T20",
-      isHome: false,
-      ticketLink: "#",
-    },
-    {
-      id: 5,
-      date: "2025-11-12", // Future date for demonstration
-      time: "15:00",
       opponent: "Lumbini Lions",
       venue: "Tribhuvan University Ground",
       competition: "NPL T20",
       isHome: true,
       ticketLink: "#",
+      result: "Won by 18 runs",
+    },
+    {
+      id: 5,
+      date: "2024-12-12", // Future date for demonstration
+      time: "15:00",
+      opponent: "Janakpur Boltz",
+      venue: "Tribhuvan University Ground",
+      competition: "NPL T20",
+      isHome: true,
+      ticketLink: "#",
+      result: "Lost by 5 wickets",
+    },
+    {
+      id: 5,
+      date: "2024-12-14", // Future date for demonstration
+      time: "15:00",
+      opponent: "Pokhara Avengers",
+      venue: "Tribhuvan University Ground",
+      competition: "NPL T20",
+      isHome: true,
+      ticketLink: "#",
+      result: "Won by 6 wickets",
+    },
+    {
+      id: 5,
+      date: "2024-12-15", // Future date for demonstration
+      time: "15:00",
+      opponent: "Biratnagar Kings",
+      venue: "Tribhuvan University Ground",
+      competition: "NPL T20",
+      isHome: true,
+      ticketLink: "#",
+      result: "Won by 1 Wickets",
     },
   ];
 
@@ -291,7 +326,8 @@ const Schedule = () => {
                 package and enjoy all home games with premium benefits.
               </p>
               <Link
-                to="/season-tickets"
+                to=""
+                // to="/season-tickets"
                 className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-black bg-gradient-to-r from-yellow-300 to-gold-500 hover:from-yellow-200 hover:to-gold-400 transition duration-300"
               >
                 Learn More
@@ -306,7 +342,8 @@ const Schedule = () => {
                 packages, including premium seating, food, and exclusive access.
               </p>
               <Link
-                to="/hospitality"
+                // to="/hospitality"
+                to=""
                 className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-black bg-gradient-to-r from-yellow-300 to-gold-500 hover:from-yellow-200 hover:to-gold-400 transition duration-300"
               >
                 View Packages
